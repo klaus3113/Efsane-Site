@@ -1,0 +1,393 @@
+
+<%- include('menu/header', {bot, user, path}) %>
+<style>
+ @import 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&subset=latin-ext';
+a.hareket{
+  display:table;
+  background-color:transparent;
+  background-image: linear-gradient(to bottom,transparent 50%, white 50%);
+  background-size: 100% 200%;
+  font:300 18px 'Roboto', sans-serif;
+  letter-spacing:2px;
+  color:white;
+  border:1px solid white;
+  border-radius:35px;
+  padding:15px 45px;
+  text-decoration:none;
+  margin-top:50px;
+  transition:background-position 0.6s,color 0.6s,box-shadow 0.6s,margin-top 0.6s;
+}
+ 
+a.hareket.yukari{
+  background-image: linear-gradient(to bottom,transparent 50%, #536DFE 50%);
+  color:#536DFE;
+  border:1px solid #536DFE;
+}
+a.hareket:hover{
+  margin-top:50px;
+  color:#536DFE;
+  background-position: 0 -100%;
+  box-shadow: 0 15px 25px 5px rgba(1,1,1,0.3);
+}
+ 
+a.hareket.yukari:hover{
+  color:white;
+  background-position: 0 -100%;
+  box-shadow: 0 15px 25px 5px rgba(1,1,1,0.3);
+}
+
+a.hareket2{
+  display:table;
+  margin-left:10px;
+  background-color:transparent;
+  background-image: linear-gradient(to bottom,transparent 50%, white 50%);
+  background-size: 100% 200%;
+  font:300 18px 'Roboto', sans-serif;
+  letter-spacing:2px;
+  color:white;
+  border:1px solid white;
+  border-radius:35px;
+  padding:15px 45px;
+  text-decoration:none;
+  margin-top:100px;
+  transition:background-position 0.6s,color 0.6s,box-shadow 0.6s,margin-top 0.6s;
+}
+ 
+a.hareket2.asagi{
+  background-image: linear-gradient(to bottom,transparent 50%, #536DFE 50%);
+  color:#536DFE;
+  border:1px solid #536DFE;
+}
+  
+.card
+{
+    z-index: 1;
+    position: relative;
+    width: 300px;
+    height:400px;
+    margin: 0 auto;
+    margin-top:20px;
+    background-color: #2a2d32;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition:    all 0.7s ease-in-out;
+    -o-transition:      all 0.7s ease-in-out;
+    -ms-transition:     all 0.7s ease-in-out;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.2);
+
+}
+  
+a.hareket2:hover{
+  margin-top:125px;
+  color:#536DFE;
+  background-position: 0 100%;
+  box-shadow: 5px 0px 35px 5px rgba(1,1,1,0.3);
+}
+ 
+a.hareket2.asagi:hover{
+  color:white;
+  background-position: 0 100%;
+  box-shadow: 0 -15px -25px 5px rgba(1,1,1,0.3);
+}
+</style>
+
+
+
+<!-- ------------------------------------------------------------------------------------------ -->
+
+
+<% if (veri === "req") { %>
+
+
+
+
+<center>
+<br>
+<br> 
+      <h1 class="title font">
+          <i class="far fa-question-circle"></i> <b>|</b> Bot Şartları
+      </h1>
+  
+  
+  <br>
+  <br>
+  <h3 class="font">
+    <b>-</b> Gerekli Şartlar <b>-</b>
+  </h3>
+  
+  <br>
+  <h5 class="font">
+    <!--<i class="fas fa-server"></i> <b>|</b> Your bot must be on at least 10 servers.<br>
+    <i class="fas fa-users"></i> <b>|</b> Your bot must have at least 1.000 users.<br>-->
+    <i class="fas fa-paperclip"></i> <b>|</b> Botunuz Discord Geliştirici kurallarına uymalıdır.<br>
+    <i class="fas fa-bullhorn"></i> <b>|</b> Botunuzda DM duyuru sistemi olmamalıdır.<br>
+    <i class="fas fa-ban"></i> <b>|</b> Botunuzda "ailemiz","tersyazı","fakemesaj" Gibi komutlar bulunmamalıdır.
+  </h5>
+
+   <form method="post">
+     <a class="hareket yukari" href="/">Ana Sayfa</a>
+     	</form>
+  
+  </center>
+
+
+<% } %>
+
+<!-- ------------------------------------------------------------------------------------------ -->
+
+
+<% if (veri === "badges") { %>
+
+
+
+
+<center>
+<br>
+<br> 
+      <h1 class="title font">
+          <i class="fas fa-medal"></i> <b>|</b> Rozetler
+      </h1>
+  
+  
+  <br>
+  <br>
+  <h3 class="font">
+    <b>-</b> Bot Badges <b>-</b>
+  </h3>
+  
+  <br>
+  <h5 class="font">
+    <img src="https://discordemoji.com/assets/emoji/8124_DiscordPartnerServer.png" style="width: 30px;" class="partner" title="List of Bots Partner">  <i class="fas fa-long-arrow-alt-right"></i> List of Bots Partner<br>
+    <img src="https://i.hizliresim.com/jCo1Xq.png" class="certificated" style="width: 40px;" title="Certified">  <i class="fas fa-long-arrow-alt-right"></i> Sertifikalı Bot
+  </h5>
+  
+  <br>
+  <br>
+  <h3 class="font">
+    <b>-</b> Profile Badges <b>-</b>
+  </h3>
+  
+  <br>
+  <h5 class="font">
+    <img src="https://image.flaticon.com/icons/svg/2933/2933077.svg" style="width: 30px;" title="Moderator">  <i class="fas fa-long-arrow-alt-right"></i> Moderatör<br>
+    <img src="https://resimag.com/p1/9188c78b21d.png" style="width: 30px;" title="Certified Developer">  <i class="fas fa-long-arrow-alt-right"></i> Geliştirici
+  </h5>
+
+   <form method="post">
+     <a class="hareket yukari" href="/">Ana Sayfa</a>
+     	</form>
+  
+  </center>
+
+
+<% } %>
+
+<!-- ------------------------------------------------------------------------------------------ -->
+
+
+<% if (veri === "api") { %>
+
+
+
+
+<center>
+<br>
+<br> 
+      <h1 class="title font">
+          <i class="fas fa-file-code"></i> <b>|</b> API Rehberi
+      </h1>
+  
+  
+  <br>
+  <br>
+  <h3 class="font">
+    <b>-</b> Kullanmak için "node-superfetch" <br>modulünü kurmalısınız. <b>-</b>
+  </h3>
+</center>
+  <br>
+  <br>
+  
+
+  <center>
+  <h5>
+    (GET) Botun durumunu öğrenme.
+  </h5>
+  
+  </center>
+  <pre style="margin-top: 0px; background-color: #2a2d32; box-shadow: 0px 0px 10px black;"><code style="color: white;">
+    const request = require('node-superfetch');
+    
+    var id = '' // BOT I
+    var url = 'https://darklists.tk/api/bot/' + id + '/status'
+    var key = '' // YOUR API KEY
+
+    var { body } = request.get(`${url}?key=${key}`)
+    
+    console.log(body.status)
+  </code></pre>
+
+<!-- ----------------------------------------------------- -->
+
+  <center>
+  <br>
+  <h5>
+    (GET) Botun kaç oy aldığını öğrenme.
+  </h5>
+  
+  </center>
+  <pre style="margin-top: 0px; background-color: #2a2d32; box-shadow: 0px 0px 10px black;"><code style="color: white;">
+    const request = require('node-superfetch');
+    
+    var id = '' // BOT ID
+    var url = 'https://darklists.tk/api/bot/' + id + '/votes' 
+    var key = '' // YOUR API KEY
+
+    var { body } = request.get(`${url}?key=${key}`)
+    
+    console.log(body.votes)
+  </code></pre>
+
+<!-- ----------------------------------------------------- -->
+
+  <center>
+  <br>
+  <h5>
+    (GET) Bota oy verdiğini kontrol etme.
+  </h5>
+  
+  </center>
+  <pre style="margin-top: 0px; background-color: #2a2d32; box-shadow: 0px 0px 10px black;"><code style="color: white;">
+    const request = require('node-superfetch');
+    
+    var botid = '' // BOT ID
+    var userid = '' // USER ID
+    var url = 'https://darklists.tk/api/bot/' + botid + '/vote/' + userid
+    var key = '' // YOUR API KEY
+
+    var { body } = request.get(`${url}?key=${key}`)
+    
+    console.log(body.vote)
+  </code></pre>
+
+<!-- ----------------------------------------------------- -->
+
+  <center>
+  <br>
+  <h5>
+    (GET) Toplam bot sayısını öğrenme.
+  </h5>
+  
+  </center>
+  <pre style="margin-top: 0px; background-color: #2a2d32; box-shadow: 0px 0px 10px black;"><code style="color: white;">
+    const request = require('node-superfetch');
+    
+    var url = 'https://darklists.tk/api/bots'
+    var key = '' // YOUR API KEY
+
+    var { body } = request.get(`${url}?key=${key}`)
+    
+    console.log(body)
+  </code></pre>
+
+<!-- ----------------------------------------------------- -->
+
+  <center>
+  <br>
+  <h5>
+    (GET) Kullanıcının rozetlerini öğrenme.
+  </h5>
+  
+  </center>
+  <pre style="margin-top: 0px; background-color: #2a2d32; box-shadow: 0px 0px 10px black;"><code style="color: white;">
+    const request = require('node-superfetch');
+    
+    var userid = '' // USER ID
+    var url = 'https://darklists.tk/api/user/' + userid
+    var key = '' // YOUR API KEY
+
+    var { body } = request.get(`${url}?key=${key}`)
+    
+    console.log(body)
+  </code></pre>
+
+<!-- ----------------------------------------------------- -->
+
+  <center>
+  <br>
+  <h5>
+    (GET) Bot detaylarını öğrenme.
+  </h5>
+  
+  </center>
+  <pre style="margin-top: 0px; background-color: #2a2d32; box-shadow: 0px 0px 10px black;"><code style="color: white;">
+    const request = require('node-superfetch');
+    
+    var botid = '' // BOT ID
+    var url = 'https://darklists.tk/api/bot/' + botid
+    var key = '' // YOUR API KEY
+
+    var { body } = request.get(`${url}?key=${key}`)
+    
+    console.log(body)
+  </code></pre>
+
+
+
+  <center>
+  
+  
+   <form method="post">
+     <a class="hareket yukari" href="/">Ana Sayfa</a>
+     	</form>
+  
+  </center>
+
+
+<% } %>
+
+<!-- ------------------------------------------------------------------------------------------ -->
+
+
+<% if (veri === "mark") { %>
+
+
+
+
+<center>
+<br>
+<br> 
+      <h1 class="title font">
+          <i class="fas fa-file-code"></i> <b>|</b> Markdown Rehber
+      </h1>
+  
+  
+  <br>
+  <br>
+  <h3 class="font">
+    <b>-</b> <a href="https://www.markdownguide.org/basic-syntax/">Rehberi görmek için tıkla!</a> <b>-</b>
+  </h3>
+  
+  <br>
+  <h5 class="font">
+    <!--<i class="fas fa-server"></i> <b>|</b> Your bot must be on at least 10 servers.<br>
+    <i class="fas fa-users"></i> <b>|</b> Your bot must have at least 1.000 users.<br>
+    <i class="fas fa-paperclip"></i> <b>|</b> Your bot must follow the Discord Developer rules.<br>
+    <i class="fas fa-bullhorn"></i> <b>|</b> Your bot should not have a private message announcement system.<br>
+    <i class="fas fa-ban"></i> <b>|</b> Your bot should not have the "our family" command.-->
+  </h5>
+
+   <form method="post">
+     <a class="hareket yukari" href="/">Ana Sayfa</a>
+     	</form>
+  
+  </center>
+
+
+<% } %>
+
+
+<% include ./menu/footer %>

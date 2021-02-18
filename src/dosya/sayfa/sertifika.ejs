@@ -1,0 +1,126 @@
+
+<%- include('menu/header', {bot, user, path}) %>
+<style>
+ @import 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&subset=latin-ext';
+a.hareket{
+  display:table;
+  background-color:transparent;
+  background-image: linear-gradient(to bottom,transparent 50%, white 50%);
+  background-size: 100% 200%;
+  font:300 18px 'Roboto', sans-serif;
+  letter-spacing:2px;
+  color:white;
+  border:1px solid white;
+  border-radius:35px;
+  padding:15px 45px;
+  text-decoration:none;
+  margin-top:50px;
+  transition:background-position 0.6s,color 0.6s,box-shadow 0.6s,margin-top 0.6s;
+}
+ 
+a.hareket.yukari{
+  background-image: linear-gradient(to bottom,transparent 50%, #536DFE 50%);
+  color:#536DFE;
+  border:1px solid #536DFE;
+}
+a.hareket:hover{
+  margin-top:50px;
+  color:#536DFE;
+  background-position: 0 -100%;
+  box-shadow: 0 15px 25px 5px rgba(1,1,1,0.3);
+}
+ 
+a.hareket.yukari:hover{
+  color:white;
+  background-position: 0 -100%;
+  box-shadow: 0 15px 25px 5px rgba(1,1,1,0.3);
+}
+
+a.hareket2{
+  display:table;
+  margin-left:10px;
+  background-color:transparent;
+  background-image: linear-gradient(to bottom,transparent 50%, white 50%);
+  background-size: 100% 200%;
+  font:300 18px 'Roboto', sans-serif;
+  letter-spacing:2px;
+  color:white;
+  border:1px solid white;
+  border-radius:35px;
+  padding:15px 45px;
+  text-decoration:none;
+  margin-top:100px;
+  transition:background-position 0.6s,color 0.6s,box-shadow 0.6s,margin-top 0.6s;
+}
+ 
+a.hareket2.asagi{
+  background-image: linear-gradient(to bottom,transparent 50%, #536DFE 50%);
+  color:#536DFE;
+  border:1px solid #536DFE;
+}
+  
+.card
+{
+    z-index: 1;
+    position: relative;
+    width: 300px;
+    height:400px;
+    margin: 0 auto;
+    margin-top:20px;
+    background-color: #2a2d32;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition:    all 0.7s ease-in-out;
+    -o-transition:      all 0.7s ease-in-out;
+    -ms-transition:     all 0.7s ease-in-out;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.2);
+
+}
+  
+a.hareket2:hover{
+  margin-top:125px;
+  color:#536DFE;
+  background-position: 0 100%;
+  box-shadow: 5px 0px 35px 5px rgba(1,1,1,0.3);
+}
+ 
+a.hareket2.asagi:hover{
+  color:white;
+  background-position: 0 100%;
+  box-shadow: 0 -15px -25px 5px rgba(1,1,1,0.3);
+}
+</style>
+
+
+<center>
+<br>
+<br> 
+      <h1 class="title font">
+          <i class="far fa-id-badge"></i> <b>|</b> Sertifika Şartları
+      </h1>
+  
+  
+  <br>
+  <br>
+  <h3 class="font">
+    <b>-</b> Gereklilikler <b>-</b>
+  </h3>
+  
+  <br>
+  <h5 class="font">
+    <i class="fas fa-server"></i> <b>|</b> 25 Sunucu<br>
+    <i class="fas fa-users"></i> <b>|</b> 25.000 Kullanıcı<br>
+    <i class="far fa-clock"></i> <b>|</b> 7/24 Aktiflik<br>
+    <i class="fas fa-headset"></i> <b>|</b> Destek Sunucusu
+  </h5>
+
+   <form method="post">
+     <a class="hareket yukari" href="/check-c">Şartları Kontrol Et</a>
+     	</form>
+  
+  </center>
+<% include ./menu/footer %>

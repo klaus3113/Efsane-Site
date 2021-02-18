@@ -1,0 +1,158 @@
+<%- include('menu/header', {bot, user, path}) %>
+
+<% if (!key.sahip) { %>
+
+<meta http-equiv="refresh" content="5;URL=/apikey">
+
+<center>
+<br>
+<br>
+  
+<h1 class="font" style="color: white;">
+  API Anahtarı
+</h1>
+  
+<h3 class="font" style="color: white;">
+  Anahtarı görmek için tuşun üstüne gel,
+</h3>
+<h4 class="font" style="color: white; margin-top: -12px;">
+    kopyalamak için tıklayabilirsin.
+</h4>
+  
+<h1 class="font renkdee" style="transition: 0.3s;">
+  <a class="btn btn-gri font renkdee" style="width: 23%; box-shadow: 0px 0px 10px black;"><i class="fas fa-key"></i>&#160&#160 <b style="transition: 0.3s;">Anahtarınız oluşturuluyor!</b></a>
+</h1>
+  
+<br>
+<br>
+<br>
+<br>
+  
+<h4 class="font" style="color: white;">
+  <i class="far fa-question-circle"></i>&#160 Lütfen 5 saniye bekleyin...
+</h4>
+
+</center>
+
+<% } else { %>
+<% if (key.key === "aski") { %>
+
+
+<center>
+<br>
+<br>
+  
+<h1 class="font" style="color: white;">
+  API Anahtarı
+</h1>
+  
+<h3 class="font" style="color: white;">
+  Anahtarı görmek için tuşun üstüne gel,
+</h3>
+<h4 class="font" style="color: white; margin-top: -12px;">
+    kopyalamak için tıklayabilirsin.
+</h4>
+  
+<h1 class="font renkde" style="transition: 0.3s;">
+  <a class="btn btn-gri font renkde" style="width: 23%; box-shadow: 0px 0px 10px black;"><i class="fas fa-key"></i>&#160&#160 <b style="transition: 0.3s;">Anahtarınız askıya alınmış!</b></a>
+</h1>
+  
+<br>
+<br>
+<br>
+<br>
+  
+<h4 class="font" style="color: white;">
+  <i class="far fa-question-circle"></i>&#160 Anahtarı açtırmak için Discord<br> sunucumuza gelebilirsin!
+</h4>
+
+</center>
+
+
+<% } else { %>
+
+<center>
+<br>
+<br>
+  
+<h1 class="font" style="color: white;">
+  API Anahtarı
+</h1>
+  
+<h3 class="font" style="color: white;">
+  Anahtarı görmek için tuşun üstüne gel,
+</h3>
+<h4 class="font" style="color: white; margin-top: -12px;">
+    kopyalamak için tıklayabilirsin.
+</h4>
+  
+<h1 class="font" style="color: white; transition: 0.3s;">
+  <a class="btn btn-gri font" style="color: white; width: 28%; box-shadow: 0px 0px 10px black;" onclick="copyToClipboard('#apiKEY')"><i class="fas fa-key"></i>&#160&#160 <b class="blur" style="transition: 0.3s;" id="apiKEY"><%=key.sahip%></b></a>
+</h1>
+  
+<br>
+<br>
+<br>
+<br>
+  
+<h4 class="font" style="color: red;">
+  <i class="fas fa-exclamation-triangle"></i>&#160 Anahtarınızı paylaşırsanız<br> anahtarınız askıya alınır.
+</h4>
+
+</center>
+
+<% } %>
+<% } %>
+
+<style>
+  
+  .blur {
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    color: white;
+    font-size: 12px;
+  }
+  
+  .blur:hover {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+    color: white;
+    font-size: 16px;
+  }
+  
+  .renkde {
+    color: white;
+    font-size: 12px;
+  }
+  
+  .renkde:hover {
+    color: red;
+    font-size: 16px;
+  }
+  
+  .renkdee {
+    color: white;
+    font-size: 12px;
+  }
+  
+  .renkdee:hover {
+    color: green;
+    font-size: 16px;
+  }
+  
+  .btn-gri {
+    background-color: #2a2d32;
+  }
+  
+</style>
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+  alert("Copied the API KEY")
+}
+</script>
+<%- include('menu/footer') %>

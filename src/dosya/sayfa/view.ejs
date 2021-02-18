@@ -1,0 +1,270 @@
+<%- include('menu/header') %>
+<script>
+function kopyala() {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val('<%=bot.ayar.fetch(`botlar.${id}.lob`)%>').select();
+  document.execCommand("copy");
+  $temp.remove();
+  alert("DarkCode ID kopyalandı! ( Bu anahtar modülü kullanmanız için gereklidir! )")
+}
+</script>
+<style>
+      .profilebadges {
+  width: 35px;
+  height: 35px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.65));
+  }
+  
+  .tus {
+    background-color: #1d1f21;
+  }
+  
+  .tus2 {
+    background-color: #2a2d32;
+  }
+  
+  .yukari {
+    z-index: 100;
+  }
+  
+  .deneme {
+    
+ background-image: url("https://images2.alphacoders.com/515/515958.jpg");
+ background-size: cover;
+}
+
+                              <% if(bot.ayar.fetch(`botlar.${id}.banner`)) { %>
+
+  .deneme {    
+ background-image: url(<%=bot.ayar.fetch(`botlar.${id}.banner`)%>);
+ background-size: cover;
+}
+       <% } %>
+
+  
+.cerceve {
+  border: 8px solid;
+  border-color: #1d1f21;
+  box-shadow: 0px 0px 20px black;
+  border-image-slice: 30%;
+} 
+  
+.btn-mavi {
+  background-color: #2a2d32;
+  border: solid 3px #00D8FF;
+  border-radius: 25px;
+  transition: 0.5s;
+  color: #ffffff;
+}
+.btn-mavi:hover {
+  background-color: #009BFF;
+  transition: 0.5s;
+  box-shadow: 0px 0px 10px #009BFF;
+  border: solid 3px #009BFF;
+  border-radius: 25px;
+  color: #ffffff;
+}
+  
+.btn-yesil {
+  background-color: #2a2d32;
+  border: solid 3px #1BFF00;
+  border-radius: 25px;
+  transition: 0.5s;
+  color: #ffffff;
+}
+.btn-yesil:hover {
+  background-color: #15C600;
+  transition: 0.5s;
+  box-shadow: 0px 0px 10px #15C600;
+  border: solid 3px #15C600;
+  border-radius: 25px;
+  color: #ffffff;
+}
+  
+.btn-kirmizi {
+  background-color: #2a2d32;
+  border: solid 3px #E90000;
+  border-radius: 25px;
+  transition: 0.5s;
+  color: #ffffff;
+}
+.btn-kirmizi:hover {
+  background-color: #C60000;
+  transition: 0.5s;
+  box-shadow: 0px 0px 10px #C60000;
+  border: solid 3px #C60000;
+  border-radius: 25px;
+  color: #ffffff;
+}
+  
+.btn-gri {
+  background-color: #2a2d32;
+  border: solid 5px #1d1f21;
+  box-shadow: 0px 0px 10px #1d1f21, 0px 0px 10px #1d1f21;
+  border-radius: 25px;
+  transition: 0.5s;
+  color: #ffffff;
+}
+.btn-gri:hover {
+  background-color: #1d1f21;
+  transition: 0.5s;
+  box-shadow: 0px 0px 25px #1d1f21;
+  border: solid 5px #1d1f21;
+  border-radius: 25px;
+  color: #ffffff;
+}
+
+.kart2 {
+  margin-top: 20px;
+  width: 1000px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 50px black;
+  background-color: #2a2d32;
+}
+  
+</style>
+<br>
+    
+<center>
+    <div class="kart2" style="height: 850px;">
+<img style="width: 1000px; height: 300px; border-radius: 15px 15px 0px 0px;" src="<%=bot.ayar.fetch(`botlar.${id}.banner`) || 'https://i.pinimg.com/originals/9d/29/e3/9d29e321b90715dcc1c2e3d5a78f320f.jpg'%>">
+<img class="view-resim cerceve" src="<%=bot.ayar.fetch(`botlar.${id}.avatar`)%>" style="width: 200px; margin-top: -100px; border-radius: 50%;" onerror="this.onerror=null; this.src='https://image3.slideserve.com/6069912/f5-e-basiniz-l.jpg'">
+
+<h1 style="font-size: 50px; margin-top: 10px;"><%=bot.ayar.fetch(`botlar.${id}.isim`) || "Veritabanı hatası!"%></h1>
+<h3 style="font-size: 20px; color: white; margin-top: -12px;"><%=bot.ayar.fetch(`botlar.${id}.kisaaciklama`) || "Veritabanı hatası!"%></h3>
+      <br>
+
+                <% if (user) { %>
+          <% if(bot.ayar.fetch(`botlar.${id}.sahipid`) === user.id) { %>
+          <a class="btn btn-yesil" style="margin-right: 3px;" href="/profile/<%=user.id%>/bot/<%=id%>/edit">Düzenle</a>
+          <a class="btn btn-mavi" onclick="kopyala()">DarkCode ID'yi kopyalamak için tıkla!</a>
+          <a class="btn btn-kirmizi" style="margin-left: 3px;" href="/profile/<%=user.id%>/bot/<%=id%>/delete">Kalıcı Sil</a>
+          <% } else { %>  
+          <a class="btn btn-yesil" style="margin-right: 3px; opacity: 0.5;"><i class="fas fa-lock"></i> Düzenle</a>
+          <a class="btn btn-mavi" style="opacity: 0.5;"><i class="fas fa-lock"></i> DarkCode ID'yi kopyalamak için tıkla!</a>
+          <a class="btn btn-kirmizi" style="margin-left: 3px; opacity: 0.5;"><i class="fas fa-lock"></i> Kalıcı Sil</a>
+          <% } %>
+          <% } else { %>
+          <a class="btn btn-yesil" style="margin-right: 3px; opacity: 0.5;"><i class="fas fa-lock"></i> Düzenle</a>
+          <a class="btn btn-mavi" style="opacity: 0.5;"><i class="fas fa-lock"></i> DarkCode ID'yi kopyalamak için tıkla!</a>
+          <a class="btn btn-kirmizi" style="margin-left: 3px; opacity: 0.5;"><i class="fas fa-lock"></i> Kalıcı Sil</a>
+          <% } %>
+        <br>       
+   
+        <h3>                    
+        <h6 style="color: black;">
+             <%if (bot.ayar.fetch(`botlar.${id}.durum`) === 'Beklemede' || bot.ayar.has(`botlar.${id}.durum`) === false) { %>
+          <br>
+                <h5 style="color: red;">
+                  <br>
+                 <i class="far fa-clock"></i>&#160 Bot şuanda onaylanmamıştır.
+          </h5>
+     <% } %>
+          </h6>
+          
+<br>  
+        
+          
+<% if(bot.ayar.has(`botlar.${id}.partner`) === true) { %>
+ <% if(bot.ayar.has(`botlar.${id}.sertifika`) === true) { %>       
+          <a class="btn btn-gri font" style="background-color: #1d1f21; font-size: 15px; color: white;"><img src="https://discordemoji.com/assets/emoji/8124_DiscordPartnerServer.png" style="width: 40px;" class="partner" title="List of Bots Partner"> <img src="https://i.hizliresim.com/jCo1Xq.png" class="certificated" style="width: 42px;" title="Certificated"></a>
+ <% } else { %>
+          <a class="btn btn-gri font" style="background-color: #1d1f21; font-size: 15px; color: white;"><img src="https://discordemoji.com/assets/emoji/8124_DiscordPartnerServer.png" style="width: 40px;" class="partner" title="List of Bots Partner"></a>
+ <% } %>       
+<%} else {%>
+ <% if(bot.ayar.has(`botlar.${id}.sertifika`) === true) { %>       
+          <a class="btn btn-gri font" style="background-color: #1d1f21; font-size: 15px; color: white;"><img src="https://i.hizliresim.com/jCo1Xq.png" class="certificated" style="width: 42px;" title="Certificated"></a>
+ <% } %>
+<% } %>
+        
+          
+          
+                <br> 
+          <br> 
+                
+<a class="btn tus btn-gri" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><i class="far fa-server"></i>&#160 Sunucular: <%=bot.ayar.fetch(`botlar.${id}.sunucu`) || "VERİ YOK"%></a>
+<a class="btn tus btn-gri" href="https://discordapp.com/oauth2/authorize?client_id=<%=id%>&scope=bot&permissions=8" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><i class="far fa-envelope"></i>&#160 Davet Et</a>
+<% if (!user) { %>
+  <a class="btn tus btn-gri" href="/select" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><i class="fas fa-exclamation-triangle"></i>&#160 Oy Ver</a>
+<% } else { %>
+  <a class="btn tus btn-gri" href="/bot/<%=id%>/oyver" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><i class="fas fa-vote-yea"></i>&#160 Oy Ver</a>
+<% } %>
+<% if (bot.ayar.has(`botlar.${id}.destek`)) { %>
+  <a class="btn tus btn-gri" href="https://discord.gg/<%=bot.ayar.fetch(`botlar.${id}.destek`)%>" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><i class="far fa-headset"></i>&#160 Destek Sunucusu</a>
+<% } %>
+<a class="btn tus btn-gri" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><i class="far fa-users"></i>&#160 Kullanıcılar: <%=bot.ayar.fetch(`botlar.${id}.kullanıcı`) || "VERİ YOK"%></a>
+<br>
+<br>
+        
+<a class="btn tus btn-gri" href="/p/<%=bot.ayar.fetch(`botlar.${id}.sahipid`)%>" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><i class="far fa-crown"></i>&#160 Sahip: <%=bot.ayar.fetch(`botlar.${id}.sahip`)%></a>
+<a class="btn tus btn-gri" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><i class="far fa-globe-asia"></i>&#160 Toplam Oy: <%=bot.ayar.fetch(`botlar.${id}.oy`)||0%></a>
+<a class="btn tus btn-gri" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><i class="far fa-wrench"></i>&#160 Prefix: <%=bot.ayar.fetch(`botlar.${id}.prefix`)%></a>
+<a class="btn tus btn-gri" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><i class="far fa-book"></i>&#160 Kitaplık: <%=bot.ayar.fetch(`botlar.${id}.kutuphane`)%></a>                             
+        
+</center>
+      <br>
+
+
+          </div>
+
+
+<div class="top">
+  <div class="jumbotron jumbotron-light" style="background-color: #1d1f21; box-shadow: 0px 0px 10px black; z-index: -10;">
+  <div class="container" style="background-color: #1d1f21;">
+
+      <div id="uaçıklama" class="incele-uzun" style="background-image: none; color: #FFFFFF; background-color: #1d1f21;" align="center">
+    <% if (bot.ayar.has(`botlar.${id}.uzunaciklama`) || bot.ayar.fetch(`botlar.${id}.uzunaciklama`) !== undefined || bot.ayar.fetch(`botlar.${id}.uzunaciklama`) !== null) { %>
+<% var xx %>
+<% for (var ii = 0; ii < bot.tags; ii++) { %>
+  <% if(bot.ayar.fetch(`botlar.${id}.uzunaciklama`).includes(bot.tags[ii]) === false) {%>
+    <% xx = false %>
+ <% } %>
+    <% if (bot.ayar.fetch(`botlar.${id}.uzunaciklama`).includes(bot.tags[ii]) === true) { %>
+     <% x = true %>
+    <% } %>
+<% } %>
+ <br> <br>
+<% if (xx === false) { %>
+  <p><%=bot.ayar.fetch(`botlar.${id}.uzunaciklama`)%></p>
+<% } else if (xx === true) { %>
+    <% let $ = bot.htmll.load(bot.ayar.fetch(`botlar.${id}.uzunaciklama`)) %>
+  <%- $.html() %>
+    <% } %>
+     <br> <br>
+    <% } else { %>
+    <p>Bir Discord botu işte!</p>
+     <br>
+      <br>
+      <br>
+      <br>
+         <br>
+      <br>
+      <br>
+     
+    <% } %>
+  </div>
+</div>
+</div>
+  
+<style>
+.blur {
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .blur:hover {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+    color: white;
+    transition: 0.3s;
+  }
+</style>
+  

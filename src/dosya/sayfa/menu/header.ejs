@@ -1,0 +1,257 @@
+<!doctype html>
+
+<style>
+@import '../node_modules/@fortawesome/fontawesome-pro/scss/fontawesome.scss';
+@import '../node_modules/@fortawesome/fontawesome-pro/scss/solid.scss';
+@import '../node_modules/@fortawesome/fontawesome-pro/scss/light.scss';
+@import '../node_modules/@fortawesome/fontawesome-pro/scss/regular.scss';
+@import '../node_modules/@fortawesome/fontawesome-pro/scss/duotone.scss';
+  
+.kart {
+  margin-top: 20px;
+  width: 1000px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 50px black;
+  background-color: #2a2d32;
+}
+</style>
+
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="HandheldFriendly" content="true">
+    <link rel="shortcut icon" href="https://friconix.com/png/fi-xnluxx-robot.png">
+    <meta name="description" content="DarkCode | Website">
+    <meta name="keywords" content="kod, discord, bot, discord.js, copy, paste, copy paste, hazır kod, bot kodları">
+    <meta name="copyright" content="List of Bots 2020">
+    <meta name="author" content="List of Bots">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3e68f475ae.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="https://images-ext-1.discordapp.net/external/m7XJVaKwL2P_ErlV67oeDoARsbVEgn7JqionDNi7sAY/https/cdn.discordapp.com/icons/695227206837993512/da3b635d6e47da1c2e7fd3a143f6857c.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
+    <!-- PRO --><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.0/css/all.css" integrity="sha384-yXyaKVWGB2SyDoYATyErcgoNH1iAnnf8fCXejZM4NYUbhWiGkZoMwh6IoJ4v5ogi" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+  </head>
+  <body style="background-color: #1d1f21;" class="text-white">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav" style="background-color: #2a2d32; box-shadow: 0px 0px 25px #000000;">
+      <a class="navbar-brand font" style="font-size: 30px;" href="/">
+         ⠀⠀
+         <i class="fas fa-robot"></i>
+        ⠀DarkCode⠀<b style="color: #FF5900; font-size: 15px; text-shadow: 0px 0px 10px #FF5900;"><%=sürüm%></b>
+        
+         <% if (user) { %>
+         <% if (bot.ayar.has(`premium.${user.id}`) === true) { %>
+         <b style="color: #00FFFF; font-size: 15px; text-shadow: 0px 0px 10px #00FFFF;">PREMIUM</b>
+         <% } %>
+         <% } %>
+        
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(70408183, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        ecommerce:"dataLayer"
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/70408183" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+            
+            <!-- -------------------------------------------------------------------------------------------------- -->
+            <a class="nav-link font" style="color: white;" href="/"><i class="fas fa-newspaper"></i>⠀Ana Sayfa</a>
+            <!-- -------------------------------------------------------------------------------------------------- -->
+
+          
+  
+
+            <!-- -------------------------------------------------------------------------------------------------- -->
+         
+       <a class="nav-link font" style="color: white;" href="/bots"><i class="fas fa-search"></i>⠀Botlar</a>
+            <!-- -------------------------------------------------------------------------------------------------- -->
+
+          
+          <% if (user) { %>
+          <% if (bot.admin.includes(user.id) === true) { %>
+
+            <!-- -------------------------------------------------------------------------------------------------- -->
+            <a class="nav-link font" style="color: white;" href="/yetkili"><i class="fas fa-laptop-code"></i>⠀Mod Panel</a>
+            <!-- -------------------------------------------------------------------------------------------------- -->
+
+          <% } else { %>
+          <% if(bot.ayar.has(`yetkili.${user.id}.durum`) === true) { %>
+
+            <!-- -------------------------------------------------------------------------------------------------- -->
+            <a class="nav-link font" style="color: white;" href="/yetkili"><i class="fas fa-laptop-code"></i>⠀Mod Panel</a>
+            <!-- -------------------------------------------------------------------------------------------------- -->
+
+          <% } %>
+          <% } %>
+          <% } %>
+          
+          
+          <div class="dropdown">
+          <a class="btn nav-link font" style="color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-info-circle"></i>⠀Seçenekler <i class="fas fa-caret-down"></i>⠀</a>
+          <div class="dropdown-content"> 
+            <!-- -------------------------------------------------------------------------------------------------- -->
+            <a class="dropdown-item fontt" href="/redirect?to=dc" style="margin-top: 10px; color: #ffffff;"><i class="fab fa-discord"></i>⠀Discord Sunucumuz</a>
+            <a class="dropdown-item fontt" href="/staff" style="color: #ffffff;"><i class="fas fa-unlock"></i>⠀Yetkili Ekibi</a>
+            <a class="dropdown-item fontt" href="/certificate" style="color: #ffffff;"><i class="far fa-id-badge"></i>⠀Sertifika</a>
+            <a class="dropdown-item fontt" href="/partnership" style="color: #ffffff;"><i class="fas fa-infinity"></i>⠀Partnerlik</a>
+            <!-- -------------------------------------------------------------------------------------------------- -->
+            <div class="dropdown-divider"></div>
+            <!-- -------------------------------------------------------------------------------------------------- -->
+            <a class="dropdown-item fontt" href="/wiki?info=req" style="color: #ffffff;"><i class="fas fa-question-circle"></i>⠀Bot Şartları </a>
+            <a class="dropdown-item fontt" href="/wiki?info=badges" style="color: #ffffff;"><i class="fas fa-certificate"></i>⠀Rozetler</a>
+            <a class="dropdown-item fontt" href="/wiki?info=api" style="color: #ffffff;"><i class="fas fa-file-alt"></i>⠀API Dökümanları</a>
+            <a class="dropdown-item fontt" href="/wiki?info=mark" style="color: #ffffff;"><i class="fas fa-book"></i> Markdown Rehberi</a>
+            <!-- -------------------------------------------------------------------------------------------------- -->
+          </div>
+        </div>
+          
+          <style>
+          .dropdown-content {
+            border-radius: 5px;
+            height: 290px;
+            display: none;
+            position: absolute;
+            background-color: #17202A;
+            z-index: 1;
+          }
+          .dropdown-content2 {
+            border-radius: 5px;
+            height: 195px;
+            display: none;
+            position: absolute;
+            background-color: #17202A;
+            z-index: 1;
+          }
+
+          .dropdown:hover .dropdown-content { display: block; }
+          .dropdown:hover .dropdown-content2 { display: block; }
+          .fontt:hover { background-color: #2C3E50; transition: 0.3s; }
+          .fontt { transition: 0.3s; }
+          </style>
+          
+        <% if (user) { %>
+        
+        <div class="dropdown">
+          <a class="btn nav-link font" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>" style="border-radius: 15px; border: 2px #1d1f21 solid; box-shadow: 0px 0px 10px black;" width="37px" alt=""> &#160&#160<%=user.username%>#<%=user.discriminator%><i class="fas fa-caret-down"></i></a>
+          <div class="dropdown-content2">
+            
+            <!-- -------------------------------------------------------------------------------------------------- -->
+            <a class="dropdown-item fontt" href="/p/<%=user.id%>" style="margin-top: 10px; color: #ffffff;"><i class="fas fa-user"></i>⠀Profil</a>
+            <a class="dropdown-item fontt" href="/widget" style="color: #ffffff;"><i class="fas fa-id-card"></i>⠀Widgets</a>
+            <a class="dropdown-item fontt" href="/apikey" style="color: #ffffff;"><i class="fas fa-key"></i>⠀API Anahtarı</a>
+            <a class="dropdown-item fontt" href="/addbot" style="color: #ffffff;"><i class="fas fa-plus-square"></i>⠀Bot Başvurusu</a>
+            <!-- -------------------------------------------------------------------------------------------------- -->
+            
+            <div class="dropdown-divider"></div>
+            
+            <!-- -------------------------------------------------------------------------------------------------- -->
+            <a class="dropdown-item fontt" style="color: red;" href="/logout"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a>
+            <!-- -------------------------------------------------------------------------------------------------- -->
+            
+          </div>
+        </div>
+        
+        
+        <% } else { %>
+        
+        <!-- -------------------------------------------------------------------------------------------------- -->
+        <a class="btn btn-primary font" style="transition: 0.3s;" href="/redirect?to=login"><i class="fas fa-key"></i> Discord ile Giriş Yap</a>
+        <!-- -------------------------------------------------------------------------------------------------- -->
+        <style>
+          .btn-primary {
+            box-shadow: 0px 0px 10px #0000ff;
+          }
+          .btn-primary:hover {
+            box-shadow: 0px 0px 20px #0000ff;
+          }
+        </style>        
+        
+        <% } %>
+      </div>
+    </nav>
+ 
+  
+    
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
+
+<style>
+.beyaz {
+  color: white;
+}
+.font {
+  font-family: 'Nunito', sans-serif;
+}
+  
+  * {
+    font-family: 'Nunito', sans-serif;
+  }
+  
+.alert {
+  height: 50px;
+  background-color: #FF5900; 
+  border-radius: 25px;
+  color: white;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  box-shadow: 0px 0px 10px #FF5900;
+  width: 1200px;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+  
+::-webkit-scrollbar {
+  width: 0px;
+}
+  
+</style>
+
+<title>DarkCode | Kullanışlı, şık ve hızlı!</title>
+
+<script>
+</script>
+
+<% if (bot.ayar.has(`duyuru`)) { %>
+<center>
+<div class="alert" style="transition: 1s;">
+  <span class="closebtn efekt" onclick="this.parentElement.style.transition='1s'; this.parentElement.style.display='none';">&times;</span>
+  <i class="fas fa-exclamation-circle"></i>&#160 <%=bot.ayar.fetch(`duyuru`)%>
+</div>
+</center>
+<% } %>

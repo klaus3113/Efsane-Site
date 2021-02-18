@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.0/css/all.css" integrity="sha384-yXyaKVWGB2SyDoYATyErcgoNH1iAnnf8fCXejZM4NYUbhWiGkZoMwh6IoJ4v5ogi" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+<style> * { font-family: 'Nunito', sans-serif; } </style>
+<link rel="shortcut icon" href="https://friconix.com/png/fi-xnluxx-robot.png">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<!-- Display the countdown timer in an element -->
+<title><%=ad%> | Sitemiz bakımdadır...</title>
+<body style="background: url('https://i.pinimg.com/originals/3b/8a/d2/3b8ad2c7b1be2caf24321c852103598a.jpg'); background-size: cover;">
+  <center><br><br><br>
+    <h1 style="font-size: 75px; color: white; text-shadow: 0px 0px 100px black;">
+      <%=ad%> | <%=config.sürüm%><br>
+      <b style="font-size: 55px; text-shadow: 0px 0px 100px black;">❝ Sitemiz bakımdadır... ❞</b>
+    </h1><br><br><br><br>
+    <div class="tus" style="margin-left: 240px;"><b id=sayac-gun>00</b> <b style="font-size: 20px;">GÜN</b></div><h5 class="tus2"></h5>
+    
+    <div class="tus"><b id=sayac-saat>00</b> <b style="font-size: 20px;">SAAT</b></div><h5 class="tus2"></h5>
+    
+    <div class="tus"><b id=sayac-dakika>00</b> <b style="font-size: 20px;">DAKİKA</b></div><h5 class="tus2"></h5>
+    
+    <div class="tus"><b id=sayac-saniye>00</b> <b style="font-size: 20px;">SANİYE</b></div><h5 class="tus2"></h5>
+    
+    <br><br><br><br><br><br><br><br><br>
+    <h3 style="color: white; text-shadow: 0px 0px 50px black;">
+      Design made with <i class="fas fa-heart"></i> by DarkCode
+    </h3>
+  </center>
+</body>
+
+<style>
+  .tus {
+    background-color: #17202A;
+    box-shadow: 0px 0px 10px black;
+    font-size: 55px;
+    color: white;
+    width: 200px;
+    height: 80px;
+    float: left;
+    border-radius: 25px;
+  }
+  .tus2 {
+    background-color: #17202A;
+    font-size: 20px;
+    color: white;
+    margin-top: -10px;
+    width: 25px;
+    height: 27px;
+    float: left;
+    opacity: 0.0;
+    border-radius: 0px 0px 15px 15px;
+  }
+</style>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("<%=config.bitiş%>").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("sayac-gun").innerHTML = days
+  document.getElementById("sayac-saat").innerHTML = hours
+  document.getElementById("sayac-dakika").innerHTML = minutes
+  document.getElementById("sayac-saniye").innerHTML = seconds
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x)
+    location.reload();
+    document.getElementById("sayac-gun").innerHTML = "00"
+    document.getElementById("sayac-saat").innerHTML = "00"
+    document.getElementById("sayac-dakika").innerHTML = "00"
+    document.getElementById("sayac-saniye").innerHTML = "00"
+  }
+}, 1000);
+</script>

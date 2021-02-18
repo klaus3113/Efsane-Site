@@ -1,0 +1,25 @@
+<%- include('menu/header') %>
+<div class="top">
+  
+<center>
+  <br>
+  <br>
+         <img src="<%=bot.ayar.fetch(`botlar.${id}.avatar`)%>" class="view-resim">
+  <br>
+ <h4>
+     <br>
+   <a style="color:black"><%=bot.useful.seg(bot.ayar.fetch(`botlar.${id}.isim`), 5)%></a></h4>
+  <br>
+  <p style="color: black">
+    <%=bot.useful.seg(bot.ayar.fetch(`botlar.${id}.isim`), 5)%> adlı bota oy veriyorsunuz.
+  </p>
+   <% if (!user) { %>
+      <a href="/giris"><button id="oy" href="/giris" class="btn btn-primary oyver" type="sumbit"><i aria-hidden="true"></i>Botlara oy vermek için giriş yapmalısınız!</button></a>
+                    <% } else { %>
+        <a href="/bot/<%=id%>/oyver"><button id="oy" href="/vote/<%=id%>" class="btn btn-primary oyver" type="sumbit"><i aria-hidden="true"></i> Oy Ver</button></a>
+                      <% } %>
+
+  </center>
+    <br><br><br><br><br><br>
+<%- include('menu/footer') %>
+  </div>

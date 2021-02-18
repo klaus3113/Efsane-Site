@@ -1,0 +1,208 @@
+<%- include('menu/header', {bot, user, path}) %>
+<div class="top">
+<div class="container is-fullhd " bgcolor="black">
+<br>
+  
+  
+<style>
+  .kucukkutu {
+    height: 40px;
+    width: 300px;
+  }  
+  .kucukkutuu {
+    height: 40px;
+    width: 200px;
+  }  
+  .buyukkutu {
+    height: 50px;
+    width: 625px;
+  }
+  .buyukkutuu {
+    height: 200px;
+    width: 625px;
+  }
+  .kayma {
+    float: left;
+  }
+  .kayma2 {
+    float: right;
+  }
+  .ortalama {
+    position: relative;
+    margin-left: 22%;
+  }
+  .ortalamaa {
+    position: relative;
+    margin-left: 2%;
+  }
+</style>
+  
+  
+ <form method="post">
+     <center>
+   <h3 class="font">
+    Düzenleniyor... <%=bot.ayar.fetch(`botlar.${id}.isim`)%>
+   </h3>
+   <h5 class="font">Boş bırakabilirsin, eski veriler geçerli olacaktır.</h5>
+   </center>			
+   <br>
+   <br>
+   
+   <div align="center" class="botekle" style="color: white; font-size:20px;">
+
+        
+                <!-- ID -->
+            <div class="kayma ortalama font">
+              <input type="text" name="botid" id="botid" style="background-color: white; border-radius: 25px;" maxlength="18" minlength="18" class="kucukkutu" placeholder="&#160&#160&#160&#160&#160&#160♜ Client ID">&#160&#160&#160&#160
+              <div class="input-group-append" id="button-addon4">
+              </div>
+            </div>
+
+            
+                     <!-- PREFIX -->
+            <div class="kayma font">
+              <input type="text" name="botprefix" id="botprefix" style="background-color: white; border-radius: 25px;" maxlength="5" minlength="1" class="kucukkutu" placeholder="&#160&#160&#160&#160&#160&#160♚ Prefix">
+              <div class="input-group-append" id="button-addon4">
+              </div>
+            </div>
+     
+  
+  
+            <br>                 <!-- Kisa Aciklama -->
+            <br> 
+            <div class="font">
+              <input type="text" name="kisa-aciklama" style="background-color: white; border-radius: 25px;" id="kisa-aciklama" maxlength="50" minlength="10" class="buyukkutu" placeholder="&#160&#160&#160&#160&#160&#160♞ Kısa Açıklama">
+              <div class="input-group-append" id="button-addon4">
+              </div>
+            </div>
+     
+     <br>                                  <!-- GitHub -->
+            <div class="kayma ortalama font">
+              <input type="url" name="github" style="background-color: white; color: black; border-radius: 25px;" id="github" class="kucukkutu" maxlength="30" placeholder="&#160&#160&#160&#160&#160&#160♛ Github URL">&#160&#160&#160&#160
+              <div class="input-group-append" id="button-addon4">
+              </div>
+            </div>
+     
+     
+                <div class="kayma font">
+    <div class="input-group-prepend kayma">
+     <span class="input-group-text" style="border-radius: 25px 0px 0px 25px; width: 156px; height: 40px;" id="basic-addon3">https://discord.gg/</span>
+   </div>
+  <input type="text" class="kayma" name="botdestek" id="botdestek" style="width: 145px; height: 40px; background-color: white; color: black; border-radius: 0px 25px 25px 0px;" maxlength="7" class="form-control" placeholder="&#160&#160Discord URL">
+ </div>
+     
+     <br>
+     <br>
+                                               <!-- Web Site -->
+            <div class="kayma ortalama font">
+              <input type="url" name="botsite" style="background-color: white; color: black; border-radius: 25px;" id="botsite" maxlength="25" class="kucukkutu" placeholder="&#160&#160&#160&#160&#160&#160◈ Website URL">&#160&#160&#160&#160
+              <div class="input-group-append" id="button-addon4">
+              </div>
+            </div>
+     
+       <!-- Kutuphane -->
+     
+          
+    <div class="kayma font">
+     <select id="kutuphane" class="kucukkutu" name="kutuphane" style="background-color: #white; color: gray; border-radius: 20px;">
+       <option disabled selected>&#160&#160&#160&#160&#160&#160❆ Bir kitaplık seç!</option>
+       <option value="discordcr" >discordcr</option>
+        
+          <option value="Nyxx" >Nyxx</option>
+        
+          <option value="Discord.Net" >Discord.Net</option>
+        
+          <option value="DSharpPlus" >DSharpPlus</option>
+        
+          <option value="Nostrum" >Nostrum</option>
+        
+          <option value="coxir" >coxir</option>
+        
+          <option value="DiscordGo" >DiscordGo</option>
+        
+          <option value="Discord4J" >Discord4J</option>
+        
+          <option value="Javacord" >Javacord</option>
+        
+          <option value="JDA" >JDA</option>
+        
+          <option value="discord.js" >discord.js</option>
+        
+          <option value="Eris" >Eris</option>
+        
+          <option value="Discordia" >Discordia</option>
+        
+          <option value="RestCord" >RestCord</option>
+        
+          <option value="Yasmin" >Yasmin</option>
+        
+          <option value="disco" >disco</option>
+        
+          <option value="discord.py" >discord.py</option>
+        
+          <option value="discordrb" >discordrb</option>
+        
+          <option value="serenity" >serenity</option>
+        
+          <option value="SwiftDiscord" >SwiftDiscord</option>
+        
+          <option value="Sword" >Sword</option>
+        
+        <option value="Other" >Other</option>
+     </select>
+     </div>
+
+	<br>
+  <br>
+     
+     
+<% if (bot.ayar.has(`botlar.${id}.partner`) === true) { %>  
+     
+     <div class="ortalamaa font">
+              <input type="url" name="botbanner" style="background-color: white; color: black; border-radius: 25px;" id="botbanner" class="buyukkutu" placeholder="&#160&#160&#160&#160&#160&#160◈ Afiş URL">&#160&#160&#160&#160
+              <div class="input-group-append" id="button-addon4">
+              </div>
+     </div>
+     
+<% } else { %>
+<% if (bot.ayar.has(`botlar.${id}.sertifika`) === true) { %>  
+     
+     <div class="ortalamaa font">
+              <input type="url" name="botbanner" style="background-color: white; color: black; border-radius: 25px;" id="botbanner" class="buyukkutu" placeholder="&#160&#160&#160&#160&#160&#160◈ Afiş URL">&#160&#160&#160&#160
+              <div class="input-group-append" id="button-addon4">
+              </div>
+     </div>
+
+<% } else { %>
+     
+  <div class="ortalamaa font">
+              <input disabled type="url" name="botbanner" style="background-color: #D5D5D5; color: white; border: 2px #2a2d32 solid; border-radius: 25px;" id="botbanner" class="buyukkutu" placeholder="&#160&#160&#160&#160&#160&#160◈ Afiş URL (Sadece Partner ve Sertifikalı Botlar içindir.)">&#160&#160&#160&#160
+              <div class="input-group-append" id="button-addon4">
+              </div>
+     </div>
+     
+<% } %>
+<% } %>
+     
+     <br>
+     
+                                     <!-- Uzun Açıklama -->
+		<div>
+      <textarea class="buyukkutuu font" name="uzun-aciklama" style="background-color: white; color: black; border-radius: 25px;" id="uzun-aciklama"
+                placeholder="&#160&#160&#160&#160&#160&#160〄 Uzun Açıklama" minlength="300" minlength="2000"></textarea>
+     </div>
+  
+     
+     <br>
+
+				<div style="width: 100%; text-align: center; margin-top: 20px;">
+					<button style="background-color: #00a1ff; box-shadow: 0px 0px 10px #00a1ff; border-radius: 20px;" type="submit" class="btn btn-primary font"><i class="far fa-paper-plane"></i> Botu Güncelle<i aria-hidden='true'></i></button>
+          <br>
+          <br>
+				</div>
+   </div>
+			</form>
+		</div>
+<% include ./menu/footer %>
+  
+</div>

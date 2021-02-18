@@ -1,0 +1,785 @@
+<%- include('menu/header', {bot, user, path}) %>
+    <style>
+    .profilepic {
+    z-index: 10000;
+    display: block;
+    margin: auto;
+    
+    width: 150px;
+    border-radius: 25px;
+}
+      
+.cerceve {
+  border: 8px solid;
+  border-color: #2a2d32;
+  box-shadow: 0px 0px 20px black;
+  border-image-slice: 30%;
+} 
+      
+      .badgecase {
+    border-radius: 4px;
+    color: black;
+    text-align: center;
+    display: block;
+    margin: auto;
+    width: 80px;
+    word-wrap: break-word;
+    margin-top: 10px;
+    padding: 5px;
+    vertical-align: middle;
+}
+      
+  .denemeknk {
+    
+ background-image: url("https://altyapibasket.com/wp-content/uploads/2016/09/gradient-black-to-white-wallpaper-3.jpg");
+
+	animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.badgecase img {
+    width: 50px;
+  float: left;
+    height: 50px;
+    border-radius: 5px;
+}
+      #bgslide {
+  box-shadow: inset 2px 80px 200px 0px #404040;
+  -webkit-box-shadow: inset 2px 80px 200px 0px #404040;
+  -moz-box-shadow: inset 2px 80px 200px 0px #404040;
+  -o-box-shadow: inset 2px 80px 200px 0px #404040;
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding: 1rem 1.5rem; 
+  outline: solid 2px #7289da;
+}
+      .profilebadges {
+  width: 35px;
+  height: 35px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.65));
+  }
+
+@keyframes bgmove {
+  from {background-position: bottom center;}
+  to {background-position: top center;}
+}
+
+#bgslide {
+  animation: bgmove 30s linear infinite;
+  animation-direction: alternate;
+  }
+
+@media screen and (min-width: 500px), print {
+  #bgslide {
+    padding-bottom: 5rem;
+    padding-top: 8rem; } }
+
+@media screen and (max-width: 500px), print {
+  #bgslide {
+    padding-bottom: 1rem;
+    padding-top: 6rem; 
+    background-size: auto !important; } }
+      
+      
+.b-dev {
+  border: 8px solid;
+  border-color: #e7ae4e;
+  box-shadow: 0px 0px 100px #e7ae4e;
+  border-image-slice: 30%;
+}
+.n-dev {
+  z-index: 10;
+  text-shadow: 0px 0px 20px white;
+  color: #e7ae4e;  
+}
+
+.b-founder {
+  border: 8px solid;
+  border-color: #C0392B;
+  box-shadow: 0px 0px 20px #C0392B;
+  border-image-slice: 30%;
+}
+.n-founder {
+  z-index: 10;
+  text-shadow: 0px 0px 20px white;
+  color: #C0392B;  
+}
+      
+.b-moderator {
+  border: 8px solid;
+  border-color: #229954;
+  box-shadow: 0px 0px 20px #229954;
+  border-image-slice: 30%;
+}
+.n-moderator {
+  z-index: 10;
+  text-shadow: 0px 0px 20px white;
+  color: #229954;  
+}
+      
+.b-botdev {
+  border: 8px solid;
+  border-color: #D35400;
+  box-shadow: 0px 0px 20px #D35400;
+  border-image-slice: 30%;
+}
+.n-botdev {
+  z-index: 10;
+  text-shadow: 0px 0px 20px white;
+  color: #D35400;  
+}      
+
+
+
+      
+    </style>
+<% if (bot.profil[kisi.id]) { %>
+    <div class="ust-profile" style="background: url('https://altyapibasket.com/wp-content/uploads/2016/09/gradient-black-to-white-wallpaper-3.jpg');">
+         <% } else { %>
+          <div class="ust-profile denemeknk">
+      <% } %>
+      <br>
+            
+<% if (kisi.id === "451444721089380373") { %>
+  <img  class="profilepic b-dev" src="https://cdn.discordapp.com/avatars/<%=kisi.id%>/<%=kisi.avatar%>?size=512">
+<% } else { %>
+<% if (bot.admin.includes(kisi.id) === true) { %>          
+  <img  class="profilepic b-founder" src="https://cdn.discordapp.com/avatars/<%=kisi.id%>/<%=kisi.avatar%>?size=512">
+<% } else { %>
+<% if(bot.ayar.has(`yetkili.${kisi.id}.durum`) === true) { %>
+  <img  class="profilepic b-moderator" src="https://cdn.discordapp.com/avatars/<%=kisi.id%>/<%=kisi.avatar%>?size=512">
+<% } else { %>
+<% if(bot.ayar.has(`sertifikak.${kisi.id}.durum`) === true) { %>
+  <img  class="profilepic b-botdev" src="https://cdn.discordapp.com/avatars/<%=kisi.id%>/<%=kisi.avatar%>?size=512">
+<% } else { %>
+  <img  class="profilepic cerceve" src="https://cdn.discordapp.com/avatars/<%=kisi.id%>/<%=kisi.avatar%>?size=512">
+<% } %>
+<% } %>
+<% } %>
+<% } %>
+            
+            
+      <br>
+            
+            
+<% if (kisi.id === "451444721089380373") { %>
+  <h3 class="font n-dev">
+    <%=kisi.username%>#<%=kisi.discriminator%>
+  </h3>
+<% } else { %>
+<% if (bot.admin.includes(kisi.id) === true) { %>          
+  <h3 class="font n-founder">
+    <%=kisi.username%>#<%=kisi.discriminator%>
+  </h3>
+<% } else { %>
+<% if(bot.ayar.has(`yetkili.${kisi.id}.durum`) === true) { %>
+  <h3 class="font n-moderator">
+    <%=kisi.username%>#<%=kisi.discriminator%>
+  </h3>
+<% } else { %>
+<% if(bot.ayar.has(`sertifikak.${kisi.id}.durum`) === true) { %>
+  <h3 class="font n-botdev">
+    <%=kisi.username%>#<%=kisi.discriminator%>
+  </h3>
+<% } else { %>
+  <h3 class="font" style="color: #2a2d32;">
+    <%=kisi.username%>#<%=kisi.discriminator%>
+  </h3>
+<% } %>
+<% } %>
+<% } %>
+<% } %>
+            
+            
+            <br>
+          
+          <% if (kisi.id === "451444721089380373") { %>
+            <a class="btn tus font" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><img title="Website Developer" src="https://image.flaticon.com/icons/svg/3039/3039498.svg" style="width: 25px;">&#160 Site Geliştiricisi</a>
+          <% } %>
+            
+          <% if (bot.admin.includes(kisi.id) === true) { %>
+            <a class="btn tus font" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><img title="Admin" src="https://image.flaticon.com/icons/svg/3305/3305421.svg" style="width: 25px;">&#160 Admin</a>
+          <% } %>
+            
+          <% if(bot.ayar.has(`yetkili.${kisi.id}.durum`) === true) { %>
+            <a class="btn tus font" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><img title="Moderator" src="https://image.flaticon.com/icons/svg/3068/3068353.svg" style="width: 25px;">&#160 Moderatör</a>
+          <% } %>
+            
+          <% if(bot.ayar.has(`premium.${kisi.id}`) === true) { %>
+            <a class="btn tus font" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><img title="Premium" src="https://image.flaticon.com/icons/svg/2997/2997162.svg" style="width: 25px;">&#160 Premium</a>
+          <% } %>
+          
+          <% if(bot.ayar.has(`sertifikak.${kisi.id}.durum`) === true) { %>
+            <a class="btn tus font" style="box-shadow: 0px 0px 20px #000000; font-size: 15px; color: white;"><img title="Certified Developer" src="https://image.flaticon.com/icons/svg/3135/3135748.svg" style="width: 25px;">&#160 Sertifikalı Geliştirici</a>
+          <% } %>
+ 
+            <br>
+            <br>
+          </div>
+<div class="top">
+  <br>
+
+  
+  <h3 class="sertifika-yazi font" style="color: white;">
+    Botlar: <%=kisi.username%>
+  </h3>
+  <h5 class="sertifika-yazi">
+  
+  </h5>
+  
+  <% if (bot.ayar.has('botlar')) { %>
+    <% if (bot.ayar.has(`kbotlar.${kisi.id}`)) { %>   
+
+<%for(var i = 0; i < Object.keys(bot.ayar.fetch('botlar')).length; i++) {%>
+<% var idd = Object.keys(bot.ayar.fetch('botlar'))[i] %>
+<%  if (bot.ayar.fetch(`botlar.${idd}.sahipid`) === kisi.id) { %>
+  
+  
+<% if(bot.ayar.has(`botlar.${idd}.partner`) === true) { %>
+   
+  <div style="float: left; margin-right: 12px; margin-left: 19px" class="card gifborder2">
+    
+<% } else { %>
+
+<% if(bot.ayar.has(`botlar.${idd}.sertifika`) === true) { %>
+  
+  <div style="float: left; margin-right: 12px; margin-left: 19px" class="card gifborder">
+    
+<% } else { %>            
+    
+  <div style="float: left; margin-right: 12px; margin-left: 19px;" class="card borderr">
+  
+<% } %>
+<% } %>          
+    
+    
+    
+            <div class="photo"><img style="border-radius: 50%; margin-top: -100px;" class="photo" src="<%=bot.ayar.fetch(`botlar.${idd}.avatar`)%>"></div>  
+             <ul>
+          
+              <br>
+              
+                <h5>
+                  
+                  
+                  
+       <% if(bot.ayar.has(`botlar.${idd}.partner`) === true) { %>
+         <% if(bot.ayar.has(`botlar.${idd}.sertifika`) === true) { %>       
+           <a href="/view/<%=idd%>" style="text-decoration: none; color: #007CFF;"><img src="https://discordemoji.com/assets/emoji/8124_DiscordPartnerServer.png" style="width: 20px;" class="partner" title="List of Bots Partner"> <img src="https://i.hizliresim.com/jCo1Xq.png" class="certificated" style="width: 20px;" title="Certificated"> <%=bot.useful.seg(bot.ayar.fetch(`botlar.${idd}.isim`), 5)%></a>
+         <% } else { %>
+           <a href="/view/<%=idd%>" style="text-decoration: none; color: #007CFF;"><img src="https://discordemoji.com/assets/emoji/8124_DiscordPartnerServer.png" style="width: 20px;" class="partner" title="List of Bots Partner"> <%=bot.useful.seg(bot.ayar.fetch(`botlar.${idd}.isim`), 5)%></a>
+         <% } %>       
+       <%} else {%>
+         <% if(bot.ayar.has(`botlar.${idd}.sertifika`) === true) { %>       
+           <a href="/view/<%=idd%>" style="text-decoration: none; color: #e7ae4e;"><img src="https://i.hizliresim.com/jCo1Xq.png" class="certificated" style="width: 20px;" title="Certificated"> <%=bot.useful.seg(bot.ayar.fetch(`botlar.${idd}.isim`), 5)%></a>
+         <% } else { %>
+           <a href="/view/<%=idd%>" style="text-decoration: none; color: white;"> <%=bot.useful.seg(bot.ayar.fetch(`botlar.${idd}.isim`), 5)%></a>
+         <% } %>
+       <% } %>
+                  
+                  
+                  
+                  
+                  
+                  
+     </h5>
+               
+               
+               
+              
+                                 <center>
+               <p class="card-text"><%=bot.ayar.fetch(`botlar.${idd}.kisaaciklama`)%></p>
+             </center>
+           <center>
+             
+             
+<% if(bot.ayar.has(`botlar.${idd}.partner`) === true) { %>
+
+<a href="/view/<%=idd%>"><button style="width:100px; height: 35px;margin-top: 20px; color: white;" class="btn btn dugmepar" type="submit"><i class="far fa-eye"></i>⠀İncele</button></a>
+<a href="https://discordapp.com/oauth2/authorize?client_id=<%=idd%>&scope=bot&permissions=0"><button style="width:100px; height: 35px;margin-top: 20px; color: white;" class="btn btn dugmepar" type="submit"><i class="fas fa-plus-circle"></i>⠀Davet</button></a>
+
+<% } else { %>
+<% if(bot.ayar.has(`botlar.${idd}.sertifika`) === true) { %>
+
+<a href="/view/<%=idd%>"><button style="width:100px; height: 35px;margin-top: 20px; color: white;" class="btn btn dugmeser" type="submit"><i class="far fa-eye"></i>⠀İncele</button></a>
+<a href="https://discordapp.com/oauth2/authorize?client_id=<%=idd%>&scope=bot&permissions=0"><button style="width:100px; height: 35px;margin-top: 20px; color: white;" class="btn btn dugmeser" type="submit"><i class="fas fa-plus-circle"></i>⠀Davet</button></a>
+
+<% } else { %>
+             
+<a href="/view/<%=idd%>"><button style="width:100px; height: 35px;margin-top: 20px; color: white;" class="btn btn dugme" type="submit"><i class="far fa-eye"></i>⠀İncele</button></a>
+<a href="https://discordapp.com/oauth2/authorize?client_id=<%=idd%>&scope=bot&permissions=0"><button style="width:100px; height: 35px;margin-top: 20px; color: white;" class="btn btn dugme" type="submit"><i class="fas fa-plus-circle"></i>⠀Davet</button></a>
+
+<% } %>
+<% } %>
+             
+             
+            </center>
+            <br>
+          </div>
+             
+   <% } %>
+    <% } %>
+   <% } %>
+   <% } else {%>
+             <br>
+   <center><h5 class="sertifika-yazi">
+     Bot yok!
+     </h5></center>
+</div>
+   <% } %>
+</div>
+  
+  
+<style>
+.renkli {
+  animation: color-change 10s infinite;
+}
+
+@keyframes color-change {
+  40% { color: red; }
+  50% { color: orange; }
+  60% { color: yellow; }
+  70% { color: green; }
+  80% { color: aqua; }
+  90% { color: blue; }
+  100% { color: pink; }
+}
+  
+.gifborder {
+            border: 7px solid;
+            border-image: url('https://media1.giphy.com/media/3otO6NFBIAFg2vPZuM/giphy.gif');
+            border-image-slice: 30%;
+}
+</style>
+
+<style>
+.neon {
+  text-shadow: 0 0 6px black;
+}
+</style>
+      <%- include('menu/footer') %>
+  
+  
+  
+  
+<style>
+.gifborder2 {
+            border: 7px solid;
+            border-color: #007CFF;
+            border-image-slice: 30%;
+}
+  
+.gifborder {
+            border: 7px solid;
+            border-color: #e7ae4e;
+            border-image-slice: 30%;
+}
+  
+  
+.borderr {
+            border: 7px solid;
+            border-color: gray;
+            border-image-slice: 30%;
+}
+  
+
+  .dugme {
+    background-color: gray;
+  }
+  
+  .dugmeser {
+    background-color: #e7ae4e;
+  }
+  
+  .dugmepar {
+    background-color: #007CFF;
+  }
+  
+  
+  
+  .rengarenk {
+    
+    color: skyblue;
+  }
+  
+  
+  .tus {
+    background-color: #1d1f21;
+  }
+
+.renkli {
+  animation: color-change 10s infinite;
+}
+
+@keyframes color-change {
+  10% { color: yellow; }
+  20% { color: orange; }
+  30% { color: pink; }
+  40% { color: lightgreen; }
+  50% { color: aqua; }
+  60% { color: yellow; }
+  70% { color: orange; }
+  80% { color: pink; }
+  90% { color: lightgreen; }
+  100% { color: aqua; }
+}
+
+.neon {
+  text-shadow: 0 0 6px black
+}
+  
+ @import 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&subset=latin-ext';
+a.hareket{
+  display:table;
+  background-color:transparent;
+  background-image: linear-gradient(to bottom,transparent 50%, white 50%);
+  background-size: 100% 200%;
+  font:300 18px 'Roboto', sans-serif;
+  letter-spacing:2px;
+  color:white;
+  border:1px solid white;
+  border-radius:35px;
+  padding:15px 45px;
+  text-decoration:none;
+  margin-top:100px;
+  transition:background-position 0.6s,color 0.6s,box-shadow 0.6s,margin-top 0.6s;
+}
+ 
+a.hareket.yukari{
+  background-image: linear-gradient(to bottom,transparent 50%, #536DFE 50%);
+  color:#536DFE;
+  border:1px solid #536DFE;
+}
+a.hareket:hover{
+  margin-top:75px;
+  color:#536DFE;
+  background-position: 0 -100%;
+  box-shadow: 0 15px 25px 5px rgba(1,1,1,0.3);
+}
+ 
+a.hareket.yukari:hover{
+  color:white;
+  background-position: 0 -100%;
+  box-shadow: 0 15px 25px 5px rgba(1,1,1,0.3);
+}
+
+.buton:hover {
+  
+    background: linear-gradient(-45deg, red, purple);
+  	animation: gradientBG 15s ease infinite;
+  
+}
+
+.buton {
+  
+  color: #fff;
+  font-family: "grobold", sans-serif;
+  background: linear-gradient(-45deg, red, purple);
+  border-radius: 10px 5px 10px 5px;
+  border: 10px;
+  height: 50px;
+  width: 150px;
+ transition: all 1s ease-in-out;
+  animation: gradientBG 15s ease infinite;
+  
+}
+
+
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+a.hareket2{
+  display:table;
+  margin-left:10px;
+  background-color:transparent;
+  background-image: linear-gradient(to bottom,transparent 50%, white 50%);
+  background-size: 100% 200%;
+  font:300 18px 'Roboto', sans-serif;
+  letter-spacing:2px;
+  color:white;
+  border:1px solid white;
+  border-radius:35px;
+  padding:15px 45px;
+  text-decoration:none;
+  margin-top:100px;
+  transition:background-position 0.6s,color 0.6s,box-shadow 0.6s,margin-top 0.6s;
+}
+ 
+a.hareket2.asagi{
+  background-image: linear-gradient(to bottom,transparent 50%, #536DFE 50%);
+  color:#536DFE;
+  border:1px solid #536DFE;
+}
+a.hareket2:hover{
+  margin-top:125px;
+  color:#536DFE;
+  background-position: 0 100%;
+  box-shadow: 5px 0px 35px 5px rgba(1,1,1,0.3);
+}
+ 
+a.hareket2.asagi:hover{
+  color:white;
+  background-position: 0 100%;
+  box-shadow: 0 -15px -25px 5px rgba(1,1,1,0.3);
+}
+.emoji {
+      font-size: 9em;
+      text-align: center;
+    }
+.view-resim{
+    border-radius: 50%;
+}
+  .ust-bot {
+    
+ background-color: white;
+  box-shadow: inset 0 0 0.5em black;
+}
+
+  .denemeknk {
+    
+ background-color: white;
+  box-shadow: inset 0 0 0.5em black;
+}
+
+.ust {
+  text-align: center;
+  border-radius: 0px;
+  color: #fff;
+  background-color: #16171b;
+  background-size: 1500px;
+  height: 400px;
+}
+.ust-profile {
+  text-align: center;
+  border-radius: 0px;
+  color: #fff;
+}
+.ana-resim-license {
+width: 100px;
+}
+.sertifika-yazi {
+color: #7289da;
+}
+.seritifika-p-yazi {
+color: #5067b7;
+}
+.sertifika {
+  width: 50px;
+}
+.top {
+text-align: center;
+}
+.card
+{
+    z-index: 1;
+    position: relative;
+    width: 300px;
+    height:400px;
+    margin: 0 auto;
+    margin-top:20px;
+    background-color: #2a2d32;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition:    all 0.7s ease-in-out;
+    -o-transition:      all 0.7s ease-in-out;
+    -ms-transition:     all 0.7s ease-in-out;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.2);
+
+}
+.card:hover, .card:focus {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+.banner
+{
+      float: left;
+    margin-right: 29px;
+    z-index: 2px;
+    margin-top: -190position: relative;
+    margin-top: -54px;
+    width:100%;
+    height:190px;    background-color: #1e1e1e;
+    background-size: cover;
+    border-bottom: solid 1px lightgrey;
+  
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition:    all 0.7s ease-in-out;
+    -o-transition:      all 0.7s ease-in-out;
+    -ms-transition:     all 0.7s ease-in-out;
+}
+.photo
+{
+      float: left;
+    margin-right: 29px;
+  z-index: 3;
+    position: relative;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: 50% 50%;
+    top:75px;
+
+}
+.card ul
+{
+    list-style: none;
+    text-align: center;
+    padding-left: 0;
+    margin-top:87px;
+    margin-bottom:30px;
+    font-size: 20px;
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition:    all 0.7s ease-in-out;
+    -o-transition:      all 0.7s ease-in-out;
+    -ms-tra 0.7s ease-in-out;
+}
+.card-text {
+ width: 100px; 
+ overflow: hidden; 
+ white-space: nowrap; 
+ text-overflow: ellipsis; 
+}
+.parlaklik {
+    width: 450px;
+    height: 400px;
+    overflow: hidden;
+  position: relative;
+}
+ 
+.parlaklik::before {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+    -webkit-transform: skewX(-25deg);
+    transform: skewX(-25deg);
+}
+ 
+div.parlaklik:hover::before {
+    -webkit-animation: parlak .75s;
+    animation: shine .75s;
+}
+.alt {
+  bottom:0px
+}
+alt div {
+  margin: -5px 0px 0px 0px;
+  padding:0px;
+  color: #fff;
+  text-align:center;
+}
+svg {
+  width:100%;
+  overflow:visible;
+}
+
+.wave {
+  animation: wave 3s linear;
+  animation-iteration-count:infinite;
+  fill: #4478e3;
+}
+.drop {
+  fill: var(--col-deepblue);
+  xfill: #99000055;
+  animation: drop 3.2s linear infinite normal;
+  stroke: var(--col-deepblue);
+  stroke-width:0.5;
+  transform: translateY(25px) ;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+.drop1 {
+  
+}
+.drop2 {
+  animation-delay: 3s;
+  animation-duration:3s;
+}
+.drop3 {
+  animation-delay: -2s;
+  animation-duration:3.4s;
+}
+.drop4 {
+  animation-delay: 1.7s;
+}
+.drop5 {
+  animation-delay: 2.7s;
+  animation-duration:3.1s;
+}
+.drop6 {
+  animation-delay: -2.1s;
+  animation-duration:3.2s;
+}
+.gooeff {
+    filter: url(#goo);
+}
+#wave2 {
+  animation-duration:5s;
+  animation-direction: reverse;
+  opacity: .6
+}
+#wave3 {
+  animation-duration: 7s;
+  opacity:.3;
+}
+@keyframes drop {
+  0% {
+    transform: translateY(25px); 
+  }
+  30% {
+    transform: translateY(-10px) scale(.1);
+  }
+  30.001% {
+    transform: translateY(25px) scale(1); 
+  }
+  70% {
+    transform: translateY(25px); 
+  }
+  100% { 
+    transform: translateY(-10px) scale(.1);  
+  }
+}
+@keyframes wave {
+  to {transform: translateX(-100%);}
+}
+
+  
+</style>
